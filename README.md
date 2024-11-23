@@ -56,15 +56,15 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 Then go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and you should be unenrolled! 
 
 
-## Fixing rolled keys
-On some devices, the `gbb.recoverykey` will get rolled when downgrading to v124, causing sh1mmer to become unbootable. If the exploit is done correctly, this shouldn't happen, however I will include this guide just in case.
+## Fixing Rolled Keys
+On some devices, the `gbb.recoverykey` will get rolled when downgrading to v124, causing Sh1mmer to become unbootable. If the exploit is done correctly, this shouldn't happen, however here are the steps to fix it.
 
 Go into VT2 (`CTRL+ALT+F2`). If you can't get to VT2, you will have to use a flash programmer (ch341a) or find some other way to get a root shell. You will need `vboot_utils` and `curl` (preinstalled on ChromeOS).
 
-**Until I can find unrolled keys for `corsola`, this will only work on `nissa` chromebooks.**
+**This only works on  `nissa` Chromebooks.**
 
 Bridge pins 3 and 8 on the flash chip, and run these commands in your shell:
-```bash
+```
 flashrom --wp-disable # if applicable
 curl -LO https://raw.githubusercontent.com/CaenJones/Pencil-Sharpener-Kv4/refs/heads/main/src/unrolled_nissa.bin
 futility gbb -s --recoverykey unrolled_nissa.bin # add -p if using a programmer
