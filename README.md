@@ -61,10 +61,10 @@ On some devices, the `gbb.recoverykey` will get rolled when downgrading to v124,
 
 Go into VT2 (`CTRL+ALT+F2`). If you can't get to VT2, you will have to use a flash programmer (ch341a) or find some other way to get a root shell. You will need `vboot_utils` and `curl` (preinstalled on ChromeOS).
 
-**This only works on  `nissa` Chromebooks.**
+**This only works on `nissa` Chromebooks (for now).**
 
 Bridge pins 3 and 8 on the flash chip, and run these commands in your shell:
-```
+```bash
 flashrom --wp-disable # if applicable
 curl -LO https://raw.githubusercontent.com/CaenJones/Pencil-Sharpener-Kv4/refs/heads/main/src/unrolled_nissa.bin
 futility gbb -s --recoverykey unrolled_nissa.bin # add -p if using a programmer
