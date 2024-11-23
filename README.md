@@ -30,7 +30,7 @@ First, fully power off and unplug your device, flip it over, and open the back t
 
 Then, disconnect the battery from the mainboard and locate your device's Flash Chip, usually near the mainboard's battery socket and covered in black tape (different for every device). Now, bridge pins 3 and 8 with your conductive material or chip clip.
 
-<img src="https://github.com/CaenJones/Pencil-Sharpener/blob/main/src/2.png?raw=true" alt="2.png"/>
+<img src="https://github.com/truekas/PencilSharpener/blob/main/src/2.png?raw=true" alt="2.png"/>
 
 Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d` and as soon as the screen goes black, press the keys to re-open the recovery menu. 
 
