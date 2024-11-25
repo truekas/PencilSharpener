@@ -57,7 +57,7 @@ Then go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, a
 
 
 ## Fixing Rolled Keys
-After downgrading to v124, some systems will keyroll while in recovery mode and prevent users from booting into the OS or Sh1mmer. This is because the recovery kernel data key failed to validate the kernel during boot. As the recovery key is in a read-only portion of the system, it was not overwritten when the kernel signature was changed during the downgrade.
+After downgrading to v124, some systems will keyroll while in recovery mode and prevent users from booting into the OS or Sh1mmer. This is because the recovery kernel data key will fail to validate the kernel during boot. As the recovery key is in a read-only portion of the system, it would not get overwritten when the kernel signature was changed during the downgrade.
 
 This issue is fixable on Nissa boards by flashing the correct keys to the system to continue the boot process. Here's how to do it:
 
