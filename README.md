@@ -57,11 +57,11 @@ Then go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, a
 
 
 ## Fixing Rolled Keys
-On some devices, the `gbb.recoverykey` will get rolled when downgrading to v124, causing Sh1mmer to become unbootable. If the exploit is done correctly, this shouldn't happen, however here are the steps to fix it.
+After downgrading to v124, some systems will keyroll while in recovery mode and prevent users from booting into the OS or Sh1mmer. This is because the recovery kernel data key failed to validate the kernel during boot. As the recovery key is in a read-only portion of the system, it was not overwritten when the kernel signature was changed during the downgrade.
+
+This issue is fixable on Nissa boards by flashing the correct keys to the system to continue the boot process. Here's how to do it:
 
 Go into VT2 (`CTRL+ALT+F2`). If you can't get to VT2, you will have to use a flash programmer (ch341a) or find some other way to get a root shell. You will need `vboot_utils` and `curl` (preinstalled on ChromeOS).
-
-**This only works on `nissa` Chromebooks (for now).**
 
 Bridge pins 3 and 8 on the flash chip, and run these commands in your shell:
 ```bash
