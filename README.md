@@ -59,14 +59,15 @@ Then go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, a
 ## Fixing Rolled Keys
 After downgrading to v124, some systems will keyroll while in recovery mode and prevent users from booting into the OS or Sh1mmer. This is because the recovery kernel data key will fail to validate the kernel during boot. As the recovery key is in a read-only portion of the system, it would not get overwritten when the kernel signature was changed during the downgrade.
 
-This issue is fixable on Nissa boards by flashing the correct keys to the system to continue the boot process. Here's how to do it:
+This issue is fixable by flashing the correct keys to the system to continue the boot process. Here's how to do it:
 
 Go into VT2 (`CTRL+ALT+F2`). If you can't get to VT2, you will have to use a flash programmer (ch341a) or find some other way to get a root shell. You will need `vboot_utils` and `curl` (preinstalled on ChromeOS).
 
 Bridge pins 3 and 8 on the flash chip, and run these commands in your shell:
 ```bash
 flashrom --wp-disable # if applicable
-curl -LO https://raw.githubusercontent.com/CaenJones/Pencil-Sharpener-Kv4/refs/heads/main/src/unrolled_nissa.bin
-futility gbb -s --recoverykey unrolled_nissa.bin # add -p if using a programmer
+curl -LO # Hosted location of your recovery bin file*
+futility gbb -s --recoverykey filename.bin # add -p if using a programmer
 flashrom --wp-enable
 ```
+*It is possible to generate the correct recovery file by using a ch341 programmer, (connecting to the device)[https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash], and running futility gbb --recoverykey file.bin to obtain the correct file.
