@@ -71,3 +71,10 @@ futility gbb -s --recoverykey filename.bin # add -p if using a programmer
 flashrom --wp-enable
 ```
 *It is possible to generate the correct recovery file by using a ch341 programmer, [connecting to the device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash), and running futility gbb --recoverykey file.bin to obtain the correct file.
+
+## Citations 
+[Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
+[Disabling Firmware Write Protection | MrChromebox.tech](https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html)
+[Unbricking/Flashing with a ch341a USB programmer | Chrultrabook Docs](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html)
+[Verified Boot](https://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot/)
+[Firmware Boot and Recovery](https://www.chromium.org/chromium-os/chromiumos-design-docs/firmware-boot-and-recovery/)
