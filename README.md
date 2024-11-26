@@ -70,4 +70,4 @@ curl -LO # Hosted location of your recovery bin file*
 futility gbb -s --recoverykey filename.bin # add -p if using a programmer
 flashrom --wp-enable
 ```
-*It is possible to generate the correct recovery file by using a ch341 programmer, (connecting to the device)[https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash], and running futility gbb --recoverykey file.bin to obtain the correct file.
+*It is possible to generate the correct recovery file by using a ch341 programmer, [connecting to the device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash), and running futility gbb --recoverykey file.bin to obtain the correct file.
