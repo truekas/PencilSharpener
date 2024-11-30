@@ -13,7 +13,9 @@ If you're looking at this writeup, this exploit has been patched. Recently, Goog
 If you are an administrator, we recommend that you set the `DeviceMinimumVersion` in Google Admin to ensure that all new Chromebooks have been patched. We also recommend that you monitor the policy sync dates for all users on Cr50 Chromebooks to monitor exploitation.
 
 ## Introduction 
-This writeup demonstrates how Google's tsunami unenrollment patch, released on v114, can be bypassed on newer motherboards with the Ti50 flash chip. The exploit uses a modified version of the original pencil method to bypass FWMP and VPD flags to prevent the system from bricking.
+This writeup demonstrates how Google's tsunami enrollment patch, released on v114, can be bypassed on newer mainboards with the Ti50 chip on Kv4. The exploit uses a modified version of the original pencil exploit to bypass FWMP and VPD and prevent the system from bricking.
+
+Google can patch this exploit if they decide to change RMA shim keys on Kv5, which is supposed to be released in a few months. 
 
 ## The Exploit
 
@@ -34,43 +36,43 @@ Then, disconnect the battery from the mainboard and locate your device's Flash C
 
 Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d` and as soon as the screen goes black, press the keys to re-open the recovery menu. 
 
-Insert your sh1mmer USB and then choose to boot from it. If it is the first time you have attempted this, it should give you a no valid image error. If this happens to you, redo the steps from the last paragraph. 
+Insert your sh1mmer USB and then choose to boot from it. If it is the first time you have attempted this, it should give you a `no valid image` error because you have keyrolled. If you got this error, follow the steps at the bottom of the document to unbrick.
 
-Afterward re-open the recovery menu and try to boot back into Sh1mmer. Choose `utilities > unenroll`, it should give an error. You should then open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and type:
+Now re-open the recovery menu and try to boot back into sh1mmer. Choose `utilities > unenroll` it should give an error. Open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
 ```
 flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
 flashrom --wp-enable
 ```
-Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v124 recovery USB. This is possible because on v130 and below, kernver is set to 4 which allows downgrading up to v120. 
+Hit `esc + refresh + power` to go back into the recovery menu and boot onto your v124 recovery USB. This is possible because on v130 and below, kernver is set to 4 which allows downgrading up to v120.
 
-After the recovery process is complete, choose to boot from internal disk on the menu. After you have booted into chromeOS, switch to the Vt2 console by pressing  `ctrl + alt + f2` and type:
+After the recovery process is complete, choose to `boot from internal disk` on the menu. Then switch to the Vt2 console by pressing  `ctrl + alt + f2` and run:
 ```
 tpm_manager_client take_ownership
 cryptohome --action=remove_firmware_management_parameters
 crossystem dev_boot_usb=1
 ```
 
-Now make sure that the battery is re-inserted on the mainboard and run `gsctool -a -o`. Follow the prompt to push the power button and the system should automatically reboot. When the device turns back on, re-open the recovery menu and re-enable devmode. 
+Now make sure that the battery is re-inserted on the mainboard and run `gsctool -a -o`. Follow the prompt to push the power button and the system should automatically reboot. When the device turns back on, re-open the recovery menu and re-enable devmode.
 
-Then go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and you should be unenrolled! 
+Now all you have to do is go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
 
 ## Fixing Rolled Keys
 After downgrading to v124, some systems will keyroll while in recovery mode and prevent users from booting into the OS or Sh1mmer. This is because the recovery kernel data key will fail to validate the kernel during boot. As the recovery key is in a read-only portion of the system, it would not get overwritten when the kernel signature was changed during the downgrade.
 
-This issue is fixable by flashing the correct keys to the system to continue the boot process. Here's how to do it:
+This issue is fixable on Nissa boards by flashing the correct keys to the system to continue the boot process. Here's how to do it:
 
 Go into VT2 (`CTRL+ALT+F2`). If you can't get to VT2, you will have to use a flash programmer (ch341a) or find some other way to get a root shell. You will need `vboot_utils` and `curl` (preinstalled on ChromeOS).
 
 Bridge pins 3 and 8 on the flash chip, and run these commands in your shell:
 ```bash
 flashrom --wp-disable # if applicable
-curl -LO # Hosted location of your recovery bin file*
-futility gbb -s --recoverykey filename.bin # add -p if using a programmer
+curl -LO https://raw.githubusercontent.com/truekas/PencilSharpener-Kv4/refs/heads/main/src/unrolled_nissa.bin
+futility gbb -s --recoverykey unrolled_nissa.bin # add -p if using a programmer
 flashrom --wp-enable
 ```
-*It is possible to generate the correct recovery file by using a ch341 programmer, [connecting to the device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash), and running futility gbb --recoverykey file.bin to obtain the correct file.
+It is possible to generate the correct recovery file by using a ch341 programmer, [connecting to the device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash), and running `futility gbb --recoverykey file.bin` to obtain the correct file.
 
 ## Citations 
 [Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
