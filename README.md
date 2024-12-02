@@ -65,7 +65,7 @@ This issue is fixable by flashing the correct keys to the system to continue the
 
 Go into VT2 (`CTRL+ALT+F2`). If you can't get to VT2, you will have to use a flash programmer (ch341a) or find some other way to get a root shell. You will need `vboot_utils` and `curl` (preinstalled on ChromeOS).
 
-Bridge pins 3 and 8 on the flash chip, and run these commands in your shell (EXAMPLE PROVIDED FOR NISSA BOARDS):
+Bridge pins 3 and 8 on the flash chip, and run these commands in your shell (THE EXAMPLE PROVIDED IS FOR NISSA BOARDS):
 ```bash
 flashrom --wp-disable # if applicable
 curl -LO https://raw.githubusercontent.com/truekas/PencilSharpener-Kv4/refs/heads/main/src/unrolled_nissa.bin
