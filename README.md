@@ -72,7 +72,7 @@ curl -LO https://raw.githubusercontent.com/truekas/PencilSharpener-Kv4/refs/head
 futility gbb -s --recoverykey unrolled_nissa.bin # add -p if using a programmer
 flashrom --wp-enable
 ```
-It is possible to generate the correct recovery file by using a ch341 programmer, [connecting to the device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash), and running `futility gbb --recoverykey file.bin` to obtain the correct file.
+It is possible to generate the correct recovery file by using a ch341 programmer and [connecting to the device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) or using vt2 to run `futility gbb --recoverykey file.bin` and obtain the correct file.
 
 ## Citations 
 [Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
@@ -98,3 +98,6 @@ It is possible to generate the correct recovery file by using a ch341 programmer
 [Firmware Write Protection on ChromeOS Devices | MrChromebox.tech](https://docs.mrchromebox.tech/docs/firmware/wp/)
 <br>
 [Firmware Management Parameters](https://www.chromium.org/chromium-os/fwmp/)
+<br>
+[GBB flag-inator](https://binbashbanana.github.io/gbbflaginator/)
+
