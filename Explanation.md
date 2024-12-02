@@ -1,14 +1,11 @@
 # Pencil Sharpener Explanation 
 
-By bridging the pins on the flash chip, write protection is temporarily disabled. This lets us enter developer mode. We can now try to boot into Sh1mmer. But because Google has changed the keys for Ti50 systems, we will get a `no valid image error`.
+To disable write protection on the flash chip and enter developer mode, we need to bridge the pins on the chip. While we can attempt to boot into Sh1mmer, we won’t be able to as Google has rolled keys for Ti50 systems.
 
-Thankfully, the original unchanged shim keys are stored in a recovery file. We can then extract and flash them to the system, rolling back Google's changes and booting into Sh1mmer. 
+Fortunately, the correct keys are stored in a recovery file, allowing us to extract and flash them to the system. This will enable us to use Sh1mmer.
 
-Now that we have access to a bash console, we can start modifying some GBB flags (in this case, we use `0x80b3` to ignore FWMP). FWMP controls many things, including what dev images can run, enrollment data, and whether USB boot works.
+Once we access the Sh1mmer bash console, we can modify the GBB flags. We will add the flag `0x80b3` so FWMP will be ignored. FWMP controls many important parts of the system, including enrollment data, developer images, and if users can USB boot.
 
-We can now use a recovery image to roll back the system from v130 to v124 because of the matching kernel version. We can then access the VT2 console on the sign-in screen to take ownership of the TPM module and remove all GBB flags on the flash chip (which holds enrollment data). Because the existing flags were cleared, including the one we set to allow USB booting, we do need to re-enable it again using `crosssystem`. 
+Because of the matching kernel version, we can use a recovery image to downgrade the system from v130 to v124. This lets us access the VT2 console on the sign-in screen, where we can take ownership of the TPM module and clear all GBB flags on the flash chip, which holds enrollment data. Since we have cleared all flags, we'll need to re-enable USB booting using `crosssystem`.
 
-Now, we can start [unlocking](https://www.chromium.org/chromium-os/developer-library/guides/device/ro-firmware-unlock/) the read-only firmware. We will have to open CCD, and the device will forget it is in developer mode due to a bug. We will have to boot back into the recovery menu and re-enable dev mode to access the VT2 console again. Now, it is possible to permanently modify the read-only firmware, and the device should be fully unenrolled.
-
-
-
+Finally, we can unlock the read-only firmware by opening CCD. This will switch the device back to verified mode. Because of this, we will have to boot into the recovery menu again to re-enable developer mode, which allows us to modify the read-only firmware. The device will then be fully un-enrolled and under the user's control.
