@@ -1,6 +1,6 @@
 # Pencil Sharpener Explanation 
 
-To disable write protection on the flash chip and enter developer mode, we need to bridge the pins on the chip. While we can attempt to boot into Sh1mmer, we won’t be able to as Google has rolled keys for Ti50 systems.
+By disabling write protection on the flash chip through bridging pins 3 and 8, we can enter into developer mode. While we can attempt to boot into Sh1mmer now, we won’t be able to as Google has rolled keys for Ti50 systems.
 
 Fortunately, the correct keys are stored in a recovery file, allowing us to extract and flash them to the system. This will enable us to use Sh1mmer.
 
