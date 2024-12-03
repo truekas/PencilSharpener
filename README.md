@@ -25,6 +25,7 @@ What you need:
 - A sh1mmer image for your system flashed to an SD card or USB stick
 - Working device charger
 - A ChromeOS recovery USB for v124
+- A few braincells 
 
 First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
 
