@@ -72,7 +72,7 @@ curl -LO https://raw.githubusercontent.com/truekas/PencilSharpener-Kv4/refs/head
 futility gbb -s --recoverykey unrolled_nissa.bin # add -p if using a programmer
 flashrom --wp-enable
 ```
-The file given is for Nissa boards only. It is possible to generate the correct recovery file for your system by using a ch341 programmer and [connecting to the device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) or using vt2 to run `futility gbb --recoverykey file.bin` and obtain the correct file.
+The file given is for Nissa boards only. It is possible to generate the correct recovery file for your system by using a ch341 programmer and [connecting to the device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) or using vt2 to run `futility gbb --recoverykey file.bin` to obtain the correct file.
 
 ## Citations 
 [Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
