@@ -6,6 +6,6 @@ Once we access the Sh1mmer bash console, we can modify the GBB flags. We will ad
 
 Because of the matching kernel version, we can use a recovery image to downgrade the system from v130 to v124. However, at this point the system will keyroll as the recovery kernel data key will fail to validate the kernel during boot. Fortunately, the correct keys are stored in a recovery file, allowing us to extract and flash them to the system.
 
-Downgrading lets us access the VT2 console on the sign-in screen, where we can take ownership of the TPM module and clear all GBB flags on the flash chip (which holds enrollemnt data). Since we have cleared all flags, we'll need to re-enable USB booting using `crosssystem`.
+Downgrading lets us access the VT2 console on the sign-in screen, where we can take ownership of the TPM module and clear all GBB flags on the flash chip (which holds enrollment data). Since we have cleared all flags, we'll need to re-enable USB booting using `crosssystem`.
 
 Finally, we can unlock the read-only firmware by opening CCD. This will switch the device back to verified mode. Because of this, we will have to boot into the recovery menu again to re-enable developer mode, which allows us to modify the read-only firmware. The device will then be fully un-enrolled and under the user's control.
