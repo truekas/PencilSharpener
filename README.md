@@ -98,3 +98,5 @@ flashrom --wp-enable
 [Firmware Management Parameters](https://www.chromium.org/chromium-os/fwmp/)
 <br>
 [GBB flag-inator](https://binbashbanana.github.io/gbbflaginator/)
+<br>
+[CrOS EC (Embedded Controller) | Software Sync](https://chromium.googlesource.com/chromiumos/platform/ec/+/HEAD/README.md#Preventing-the-RW-EC-firmware-from-being-overwritten-by-Software-Sync-at-boot)
