@@ -22,7 +22,7 @@ What you need:
 - A screwdriver and an ESD bracelet to prevent damage to the device
 - A sh1mmer image for your system flashed to an SD card or USB stick
 - Working device charger
-- A ChromeOS recovery USB for v124
+- A ChromeOS recovery USB for v125
 - A few braincells 
 
 First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
@@ -43,7 +43,7 @@ flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
 flashrom --wp-enable
 ```
-Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v124 recovery USB. **Follow the steps at the bottom of the document if you keyroll after the recovery process.**  
+Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v125 recovery USB. **Follow the steps at the bottom of the document if you keyroll after the recovery process.**  
 
 After the recovery process is complete, choose to `boot from internal disk` on the menu. Then switch to the Vt2 console on the sign-in screen by pressing  `ctrl + alt + f2` and run:
 ```
@@ -57,7 +57,7 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 Next, go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
 ## Fixing Rolled Keys
-After downgrading to v124, some systems will keyroll while in recovery mode and prevent users from booting into the OS or Sh1mmer. This is because the recovery kernel data key will fail to validate the kernel during boot. As the recovery key is in a read-only portion of the system, it would not get overwritten when the kernel signature was changed during the downgrade.
+After downgrading to v125, some systems will keyroll while in recovery mode and prevent users from booting into the OS or Sh1mmer. This is because the recovery kernel data key will fail to validate the kernel during boot. As the recovery key is in a read-only portion of the system, it would not get overwritten when the kernel signature was changed during the downgrade.
 
 This issue is fixable by flashing the correct keys to the system. Here's how to do it:
 
