@@ -72,6 +72,9 @@ flashrom --wp-enable
 ```
 **The file given is for Nissa boards only.** It is possible to generate the correct recovery file for your system by using a ch341 programmer and a flash chip, [connecting to the flash chip](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) and run `futility gbb --recoverykey file.bin` to obtain the correct file.
 
+## Re-Enrolling
+You can re-enroll your device by accessing a Vt2 shell, typing `vpd -i RW_VPD`, and then powerwashing the device through settings or switching from developer mode to verified mode. 
+
 ## Citations (Not MLA)
 [Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
 <br>
