@@ -35,7 +35,7 @@ Then, disconnect the battery from the mainboard and locate your device's Flash C
 
 Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d` and as soon as the screen goes black, press the keys to re-open the recovery menu. 
 
-Insert your sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, repeat the steps from the last paragraph.
+Insert your sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to flash the correct keys to the device. Please follow the **Rolled Keys** section at the bottom of the document.
 
 Re-open the recovery menu and try to boot back into sh1mmer. You should choose `utilities > unenroll` it should give an error. Open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
 ```
@@ -70,7 +70,7 @@ curl -LO https://github.com/CaenJones/Pencil-Sharpener-Kv4/raw/refs/heads/main/s
 futility gbb -s --recoverykey unrolled_nissa.bin # add -p if using a programmer
 flashrom --wp-enable
 ```
-**The file given is for Nissa boards only.** It is possible to generate the correct recovery file for your system by using a ch341 programmer and [connecting to the device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) or using vt2 to run `futility gbb --recoverykey file.bin` to obtain the correct file.
+**The file given is for Nissa boards only.** It is possible to generate the correct recovery file for your system by using a ch341 programmer and a flash chip, [connecting to the flash chip](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) and run `futility gbb --recoverykey file.bin` to obtain the correct file.
 
 ## Citations (Not MLA)
 [Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
