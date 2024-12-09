@@ -70,7 +70,7 @@ curl -LO https://github.com/CaenJones/Pencil-Sharpener-Kv4/raw/refs/heads/main/s
 futility gbb -s --recoverykey unrolled_nissa.bin # add -p if using a programmer
 flashrom --wp-enable
 ```
-**The file given is for Nissa boards only.** It is possible to generate the correct recovery file for your system by using a ch341 programmer and a chip clip, [connecting to the flash chip](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) and run `futility gbb --recoverykey file.bin` to obtain the correct file.
+**The file given is for Nissa boards only.** It is possible to generate the correct recovery file for your system by using a ch341 programmer and a chip clip, [connecting to the flash chip](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash), and running `futility gbb --recoverykey file.bin` to obtain the correct file.
 
 ## Re-Enrolling
 It is possible to re-enroll your device by accessing a Vt2 shell, typing `vpd -i RW_VPD`, and then powerwashing the device by switching from developer mode to verified mode.
