@@ -35,17 +35,17 @@ Then, disconnect the battery from the mainboard and locate your device's Flash C
 
 Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d` and as soon as the screen goes black, press the keys to re-open the recovery menu. 
 
-Insert your sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to flash the correct keys to the device. Please follow the **Rolled Keys** section at the bottom of the document.
+Insert your sh1mmer USB and then choose to boot from it. You may get a no valid image error. If this happens, you need to re-flash the correct keys to the device. Please follow the [Rolled Keys](#fixing-rolled-keys) section.
 
-Re-open the recovery menu and try to boot back into sh1mmer. You should choose `utilities > unenroll` it should give an error. Open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
+Re-open the recovery menu and boot into sh1mmer. You should choose `utilities > unenroll` and after it gives an error, open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
 ```
 flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
 flashrom --wp-enable
 ```
-Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v125 recovery USB. **Follow the steps at the bottom of the document if you keyroll after the recovery process.**  
+Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v125 recovery USB and follow its instructions. See the [keyroll steps](#fixing-rolled-keys) on the document if you keyroll again.
 
-After the recovery process is complete, choose to `boot from internal disk` on the menu. Then switch to the Vt2 console on the sign-in screen by pressing  `ctrl + alt + f2` and run:
+After the recovery process is complete, choose to boot into ChromeOS. Then switch to the Vt2 console on the sign-in screen by pressing `ctrl + alt + f2` and run:
 ```
 tpm_manager_client take_ownership
 cryptohome --action=remove_firmware_management_parameters
@@ -57,20 +57,18 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 Next, go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
 ## Fixing Rolled Keys
-After downgrading or trying to use Sh1mmer, some systems will keyroll while in recovery mode and prevent users from booting. This is because the recovery kernel data key will fail to validate the kernel during boot. 
+After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the kernel during boot. 
 
 This issue is fixable by flashing the correct keys to the system. Here's how to do it:
 
-Go into VT2 (`CTRL+ALT+F2`). If you can't get to VT2, you will have to use a flash programmer (ch341a) or find some other way to get a root shell. You will need `vboot_utils` and `curl` (preinstalled on ChromeOS).
+Go into VT2 with `CTRL+ALT+F2` or if you can't get to VT2, use a flash programmer (ch341a) and a chip clip connected to the flash chip. After you are [connected to](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) your device, bridge pins 3 and 8 run these commands.
 
-Bridge pins 3 and 8 on the flash chip, and run these commands in your shell **(THE EXAMPLE PROVIDED IS FOR NISSA BOARDS)**:
 ```bash
-flashrom --wp-disable # if applicable
-curl -LO https://github.com/CaenJones/Pencil-Sharpener-Kv4/raw/refs/heads/main/src/unrolled_nissa.bin
-futility gbb -s --recoverykey unrolled_nissa.bin # add -p if using a programmer
+flashrom --wp-disable
+futility gbb --recoverykey file.bin
+futility gbb -s --recoverykey file.bin # add -p if using a programmer
 flashrom --wp-enable
 ```
-**The file given is for Nissa boards only.** It is possible to generate the correct recovery file for your system by using a ch341 programmer and a chip clip, [connecting to the flash chip](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash), and running `futility gbb --recoverykey file.bin` to obtain the correct file.
 
 ## Re-Enrolling
 It is possible to re-enroll your device by accessing a Vt2 shell, typing `vpd -i RW_VPD`, and then powerwashing the device by switching from developer mode to verified mode.
