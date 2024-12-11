@@ -35,7 +35,7 @@ Then, disconnect the battery from the mainboard and locate your device's Flash C
 
 Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d` and as soon as the screen goes black, press the keys to re-open the recovery menu. 
 
-Insert your sh1mmer USB and then choose to boot from it. You may get a no valid image error. If this happens, you need to re-flash the correct keys to the device. Please follow the [Rolled Keys](#fixing-rolled-keys) section.
+Insert your sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to re-flash the correct keys to the device. Please follow the [Rolled Keys](#fixing-rolled-keys) section.
 
 Re-open the recovery menu and boot into sh1mmer. You should choose `utilities > unenroll` and after it gives an error, open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
 ```
