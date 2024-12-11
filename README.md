@@ -57,7 +57,7 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 Next, go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
 ## Fixing Rolled Keys
-After downgrading to v125, some systems will keyroll while in recovery mode and prevent users from booting into the OS or Sh1mmer. This is because the recovery kernel data key will fail to validate the kernel during boot. As the recovery key is in a read-only portion of the system, it would not get overwritten when the kernel signature was changed during the downgrade.
+After downgrading or trying to use Sh1mmer, some systems will keyroll while in recovery mode and prevent users from booting. This is because the recovery kernel data key will fail to validate the kernel during boot. 
 
 This issue is fixable by flashing the correct keys to the system. Here's how to do it:
 
