@@ -1,7 +1,7 @@
 # Pencil Sharpener Explanation 
 By disabling write protection on the flash chip through bridging pins 3 and 8, we can enter into developer mode. This also lets us boot into Sh1mmer.
 
-However, at this point the system will keyroll as the recovery kernel data key will fail to validate the shim and refuse to boot into it. Fortunately, the correct keys are stored in a recovery file, so we can still extract and flash them to the flash chip.
+However, at this point Sh1mmer cannot boot as the recovery kernel data key will fail to validate the shim and refuse to work. Fortunately, the correct keys are stored in a recovery file, so we can still extract and re-flash them.
 
 Once we access the Sh1mmer bash console, we can modify the GBB flags. By adding the flag `0x80b3` FWMP will be ignored by the device. FWMP controls many important parts of the system, including enrollment data, what developer images work, and if users can boot from a USB.
 
