@@ -65,6 +65,8 @@ Next, go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, 
 ## Fixing Rolled Keys
 After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the system during boot. 
 
+<img src="https://github.com/truekas/PencilSharpener/blob/main/src/rolledkeys.png?raw=true" alt="ch341a"/>
+
 This issue is fixable by flashing the correct keys to the system. Here's how to do it:
 
 First, take your ch341a flash programmer and attach it to your chip clip (the red wire connects to number 1 on the ch341a). Then take the end of your chip clip, and re-attach it to your flash chip. Now [connect to your device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) though your linux system and run the following commands: (this can also technically be done through VT2)
