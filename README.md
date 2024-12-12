@@ -39,9 +39,9 @@ Then, disconnect the battery from the mainboard and locate your device's Flash C
 
 Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d` and as soon as the screen goes black, press the keys to re-open the recovery menu. 
 
-Insert your sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to re-flash the correct keys to the device using instructions in the [rolled keys](#fixing-rolled-keys) section.
+Insert your Sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to re-flash the correct keys to the device using instructions in the [rolled keys](#fixing-rolled-keys) section.
 
-Re-open the recovery menu and boot into sh1mmer. You should choose `utilities > unenroll` and after it gives an error, open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
+Re-open the recovery menu and boot into Sh1mmer. You should choose `utilities > unenroll` and after it gives an error, open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
 ```
 flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
@@ -49,7 +49,7 @@ flashrom --wp-enable
 ```
 Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v125 recovery USB and follow its instructions. Follow the [keyroll steps](#fixing-rolled-keys) if you keyroll again.
 
-After the recovery process is complete, choose to boot into ChromeOS. Then switch to the Vt2 console on the sign-in screen by pressing `ctrl + alt + f2` and run:
+After the recovery process is complete, choose to boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2` and run:
 ```
 tpm_manager_client take_ownership
 cryptohome --action=remove_firmware_management_parameters
@@ -58,7 +58,7 @@ crossystem dev_boot_usb=1
 
 Now make sure that the battery is re-inserted on the mainboard and run `gsctool -a -o`. Follow the prompt to push the power button and the system should automatically reboot. When the device turns back on, re-open the recovery menu and re-enable devmode.
 
-Next, go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
+Next, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
 ## Fixing Rolled Keys
 After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the system during boot. 
