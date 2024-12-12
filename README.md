@@ -33,8 +33,6 @@ This writeup demonstrates how Google's tsunami enrollment patch, released on v11
 
 First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
 
-<img src="https://github.com/truekas/PencilSharpener/blob/main/src/6.png?raw=true" alt="6.png"/>
-
 Then, disconnect the battery from the mainboard and locate your device's Flash Chip, usually near the mainboard's battery socket and covered in black tape (different for every device). Bridge pins 3 and 8 with your conductive material or chip clip.
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/2.png?raw=true" alt="2.png"/>
