@@ -21,14 +21,15 @@ This writeup demonstrates how Google's tsunami enrollment patch, released on v11
 - Kelpstream | Gave continuous feedback and helped test Pencil Sharpener
   
 ## The Exploit
-
-What you need:
-- A pencil or conductive material (chip clip recommended) 
+**What you need:**
+- Chip Clip
+- A Linux system with flashrom installed
 - A screwdriver and an ESD bracelet to prevent damage to the device
-- A sh1mmer image for your system flashed to an SD card or USB stick
-- Working device charger
+- Sh1mmer image for your device
+- Working charger
+- Ch341a Flash Programmer
 - A ChromeOS recovery USB for v125
-- A few braincells 
+- A few braincells
 
 First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
 
@@ -40,7 +41,7 @@ Then, disconnect the battery from the mainboard and locate your device's Flash C
 
 Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d` and as soon as the screen goes black, press the keys to re-open the recovery menu. 
 
-Insert your sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to re-flash the correct keys to the device. Please follow the [Rolled Keys](#fixing-rolled-keys) section.
+Insert your sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to re-flash the correct keys to the device using instructions in the [rolled keys](#fixing-rolled-keys) section.
 
 Re-open the recovery menu and boot into sh1mmer. You should choose `utilities > unenroll` and after it gives an error, open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
 ```
@@ -48,7 +49,7 @@ flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
 flashrom --wp-enable
 ```
-Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v125 recovery USB and follow its instructions. See the [keyroll steps](#fixing-rolled-keys) on the document if you keyroll again.
+Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v125 recovery USB and follow its instructions. Follow the [keyroll steps](#fixing-rolled-keys) if you keyroll again.
 
 After the recovery process is complete, choose to boot into ChromeOS. Then switch to the Vt2 console on the sign-in screen by pressing `ctrl + alt + f2` and run:
 ```
@@ -62,24 +63,30 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 Next, go back to the Vt2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
 ## Fixing Rolled Keys
-After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the kernel during boot. 
+After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the system during boot. 
 
 This issue is fixable by flashing the correct keys to the system. Here's how to do it:
 
-Go into VT2 with `CTRL+ALT+F2` or if you can't get to VT2, use a flash programmer (ch341a) and a chip clip connected to the flash chip. After you are [connected to](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) your device, bridge pins 3 and 8 run these commands.
+First, take your ch341a flash programmer and attach it to your chip clip (the red wire connects to number 1 on the ch341a). Then take the end of your chip clip, and re-attach it to your flash chip. Now [connect to your device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) though your linux system and run the following commands: (this can also technically be done through VT2)
+
+If you are not using a flash programmer, remove `-p ch341a_sp1` from the commands you run.
 
 ```bash
 flashrom --wp-disable
-futility gbb --recoverykey file.bin
-futility gbb -s --recoverykey file.bin # add -p if using a programmer
+futility gbb -p ch341a_sp1 -r file.bin
+futility gbb -p ch341a_spi -s -r file.bin
 flashrom --wp-enable
 ```
 
 ## Re-Enrolling
-It is possible to re-enroll your device by accessing a Vt2 shell, typing `vpd -i RW_VPD`, and then powerwashing the device by switching from developer mode to verified mode.
+It is possible to re-enroll your device by accessing a VT2 shell, typing `vpd -i RW_VPD`, and then powerwashing the device using `CTRL + ALT + SHIFT + R`.
 
 ## Citations (Not MLA)
 [Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
+<br>
+[Flashing GBB Flags](https://appleflyers-blog.vercel.app/blog/gbbflagflash)
+<br>
+[vboot_reference futility flags](https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/refs/heads/main/futility/docs/cmd_gbb_utility.md)
 <br>
 [Disabling Firmware Write Protection | MrChromebox.tech](https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html)
 <br>
@@ -106,3 +113,5 @@ It is possible to re-enroll your device by accessing a Vt2 shell, typing `vpd -i
 [GBB flag-inator](https://binbashbanana.github.io/gbbflaginator/)
 <br>
 [CrOS EC (Embedded Controller) | Software Sync](https://chromium.googlesource.com/chromiumos/platform/ec/+/HEAD/README.md#Preventing-the-RW-EC-firmware-from-being-overwritten-by-Software-Sync-at-boot)
+<br>
+[Chromium OS Docs - Firmware Test Manual](https://chromium.googlesource.com/chromiumos/docs/+/master/firmware_test_manual.md)
