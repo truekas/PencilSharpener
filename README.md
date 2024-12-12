@@ -16,9 +16,9 @@ If you are an administrator, we recommend that you set the `DeviceMinimumVersion
 This writeup demonstrates how Google's tsunami enrollment patch, released on v114, can be bypassed on newer mainboards with the Ti50 chip on Kv4. The exploit uses a modified version of the original pencil exploit to bypass FWMP and VPD and prevent the system from bricking. If you are curious about Pencil Sharpener, you can check out our [explanation](https://github.com/truekas/PencilSharpener/blob/main/Explanation.md) of why it works.
 
 **Special Thanks To:**
-- Appleflyer
-- Kilobyte
-- Kelpstream
+- Appleflyer | who's blog post helped us to write improved instructions on the keyflashing process
+- Kilobyte | Helping with re-enrollment processs
+- Kelpstream | Gave continuous feedback and helped test Pencil Sharpener
   
 ## The Exploit
 
