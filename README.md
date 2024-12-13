@@ -23,6 +23,7 @@ This writeup demonstrates how Google's tsunami enrollment patch, released on v11
 ## The Exploit
 **What you need:**
 - Chip Clip
+- Paperclip or Safety Pin
 - A Linux system with flashrom installed
 - A screwdriver and an ESD bracelet to prevent damage to the device
 - Sh1mmer image for your device
@@ -32,6 +33,12 @@ This writeup demonstrates how Google's tsunami enrollment patch, released on v11
 - A few braincells
 
 First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
+
+> #### Chip clip setup
+> Take your chip clip, and a safety pin (recommended) or paperclip.\
+> If using a safety pin, cut off the bigger side.\
+> Put the paperclip or safety pin into holes 3 and 8. To find these, find the red wire. This is pin 1. From there, you can find the other pins.\
+> With pin 1 in the top left, pin 3 would be the 3rd pin in the top row, and pin 8 would be directly under pin 1.
 
 Then, disconnect the battery from the mainboard and locate your device's Flash Chip, usually near the mainboard's battery socket and covered in black tape (different for every device). Bridge pins 3 and 8 with your conductive material or chip clip.
 
@@ -61,8 +68,10 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 Next, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
 ## Fixing Rolled Keys
-**IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**
-After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the system during boot. 
+**IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**\
+After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the system during boot.
+
+**Ideally, this should not be nescessary due to running `flashrom --wp-enable` previously. This only exists for you to be able to recover your device if you miss that command or somehow get stuck with rolled keys.**
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/rolledkeys.png?raw=true" alt="ch341a"/>
 
