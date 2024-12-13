@@ -28,7 +28,7 @@ This writeup demonstrates how Google's tsunami enrollment patch, released on v11
 - Sh1mmer image for your device
 - Working charger
 - Ch341a Flash Programmer
-- A ChromeOS recovery USB for v125
+- A ChromeOS recovery USB for v124
 - A few braincells
 
 First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
@@ -47,7 +47,7 @@ flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
 flashrom --wp-enable
 ```
-Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v125 recovery USB and follow its instructions. Follow the [keyroll steps](#fixing-rolled-keys) if you keyroll again.
+Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v124 recovery USB and follow its instructions. Follow the [keyroll steps](#fixing-rolled-keys) if you keyroll again.
 
 After the recovery process is complete, choose to boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2` and run:
 ```
@@ -80,7 +80,7 @@ flashrom --wp-enable
 ```
 
 ## Re-Enrolling
-It is possible to re-enroll your device by accessing a VT2 shell, typing `vpd -i RW_VPD`, and then powerwashing the device using `CTRL + ALT + SHIFT + R`.
+It is possible to re-enroll your device by accessing a VT2 shell, typing `vpd -i RW_VPD -s check_enrollment=1`, and then powerwashing the device using `CTRL + ALT + SHIFT + R`.
 
 ## Citations (Not MLA)
 [Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
