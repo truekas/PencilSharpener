@@ -34,6 +34,9 @@ This writeup demonstrates how Google's tsunami enrollment patch, released on v11
 
 First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
 
+> [!TIP]ee
+> test
+
 > #### Chip clip setup
 > Take your chip clip, and a safety pin (recommended) or paperclip.\
 > If using a safety pin, cut off the bigger side.\
