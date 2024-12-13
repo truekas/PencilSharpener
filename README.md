@@ -68,23 +68,32 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 Next, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
 ## Fixing Rolled Keys
-**IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**\
-After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the system during boot.
+**IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**
+After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the system during boot. 
 
 **Ideally, this should not be nescessary due to running `flashrom --wp-enable` previously. This only exists for you to be able to recover your device if you miss that command or somehow get stuck with rolled keys.**
 
-<img src="https://github.com/truekas/PencilSharpener/blob/main/src/rolledkeys.png?raw=true" alt="ch341a"/>
+<img src="https://github.com/CaenJones/Pencil-Sharpener-Kv4/blob/main/src/rolledkeys.png?raw=true" alt="ch341a"/>
 
 This issue is fixable by flashing the correct keys to the system. Here's how to do it:
 
 First, take your ch341a flash programmer and attach it to your chip clip (the red wire connects to number 1 on the ch341a). Then take the end of your chip clip, and re-attach it to your flash chip. Now [connect to your device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) though your linux system and run the following commands: (this can also technically be done through VT2)
 
-If you are not using a flash programmer, remove `-p ch341a_sp1` from the commands you run.
+If you are not using a flash programmer, remove `-p ch341a_spi` from the commands you run.
 
 ```bash
 flashrom --wp-disable
-futility gbb -p ch341a_sp1 -r file.bin
+futility gbb -p ch341a_spi -r file.bin 
 futility gbb -p ch341a_spi -s -r file.bin
+flashrom --wp-enable
+```
+
+If you are using a device **with a Nissa board**, you can use our working example with the correct keys already extracted. The same instructions apply for `-p ch341a_spi` if you are not using a programmer. 
+
+```bash
+flashrom --wp-disable
+curl -O https://github.com/CaenJones/Pencil-Sharpener-Kv4/raw/refs/heads/main/src/nissa_keys.bin
+futility gbb -p ch341a_spi -s -r nissa_keys.bin
 flashrom --wp-enable
 ```
 
