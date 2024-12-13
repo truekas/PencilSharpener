@@ -88,7 +88,7 @@ futility gbb -p ch341a_spi -s -r file.bin
 flashrom --wp-enable
 ```
 
-If you are using a device **with a Nissa board**, you can use our working example with the correct keys already extracted. The same instructions apply for `-p ch341a_spi` if you are not using a programmer. 
+If you are using a device **with a Nissa board**, you can use our working example with the correct keys already extracted. You should still remove `-p ch341a_spi` if you are not using a programmer. 
 
 ```bash
 flashrom --wp-disable
