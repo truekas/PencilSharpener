@@ -83,7 +83,7 @@ If you are not using a flash programmer, remove `-p ch341a_spi` from the command
 
 ```bash
 flashrom --wp-disable
-futility gbb -p ch341a_spi -r file.bin 
+futility gbb -p ch341a_spi -r file.bin #extract keys as file.bin
 futility gbb -p ch341a_spi -s -r file.bin
 flashrom --wp-enable
 ```
@@ -92,7 +92,7 @@ If you are using a device **with a Nissa board**, you can use our working exampl
 
 ```bash
 flashrom --wp-disable
-curl -O https://github.com/CaenJones/Pencil-Sharpener-Kv4/raw/refs/heads/main/src/nissa_keys.bin
+curl -O https://github.com/truekas/PencilSharpener/raw/refs/heads/main/src/nissa_keys.bin
 futility gbb -p ch341a_spi -s -r nissa_keys.bin
 flashrom --wp-enable
 ```
