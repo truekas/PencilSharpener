@@ -35,7 +35,7 @@ This writeup demonstrates how Google's tsunami enrollment patch, released on v11
 First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
 
 > [!TIP] 
-> **How to Setup Your Chip clip**
+> **How to Setup Your Chip clip:**
 > \
 > \
 > Take your chip clip, and a safety pin (recommended) or paperclip. If you are using a safety pin, cut off the bigger side.\
@@ -58,7 +58,9 @@ flashrom --wp-enable
 ```
 Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v124 recovery USB and follow its instructions. Follow the [keyroll steps](#fixing-rolled-keys) if you keyroll again.
 
-After the recovery process is complete, choose to boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2`. If you are prompted to login on the console, try to login as `chronos` with no password, and elevate to root by using `sudo -i`. If that does not work, you can also try logging in as `root` and then using `test0000` as your password. After you have access to the shell, run the following commands.
+After the recovery process is complete, choose to boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2`. 
+
+If you are prompted to login on the console, try to login as `chronos` with no password, and elevate to root by using `sudo -i`. If that does not work, you can also try logging in as `root` and then using `test0000` as your password. After you have access to the shell, run the following commands.
 ```
 tpm_manager_client take_ownership
 cryptohome --action=remove_firmware_management_parameters
