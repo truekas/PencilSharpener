@@ -36,6 +36,7 @@ First, fully power off and unplug your device, flip it over, and open the back t
 
 > [!TIP] 
 > **How to Setup Your Chip clip**
+> /
 > Take your chip clip, and a safety pin (recommended) or paperclip. If you are using a safety pin, cut off the bigger side.\
 > Put the paperclip or safety pin into holes 3 and 8. To find these, find the red wire. This is pin 1. From there, you can find the other pins.
 > With pin 1 in the top left, pin 3 would be the 3rd pin in the top row, and pin 8 would be directly under pin 1.
