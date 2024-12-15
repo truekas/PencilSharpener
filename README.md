@@ -16,8 +16,8 @@ If you are an administrator, we recommend that you set the `DeviceMinimumVersion
 This writeup demonstrates how Google's tsunami enrollment patch, released on v114, can be bypassed on newer mainboards with the Ti50 chip on Kv4. The exploit uses a modified version of the original pencil exploit to bypass FWMP and VPD and prevent the system from bricking. If you are curious about Pencil Sharpener, you can check out our [explanation](https://github.com/truekas/PencilSharpener/blob/main/Explanation.md) of why it works.
 
 **Special Thanks To:**
-- Appleflyer | who's blog post helped us to write improved instructions on the keyflashing process
-- Kilobyte | Helping with re-enrollment processs
+- Appleflyer | who's blog post helped us to write improved instructions on attaching the ch341a
+- Kilobyte | Helping with re-enrollment processs command
 - Kelpstream | Gave continuous feedback and helped test Pencil Sharpener
   
 ## The Exploit
@@ -35,7 +35,7 @@ This writeup demonstrates how Google's tsunami enrollment patch, released on v11
 First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
 
 > [!TIP] 
-> ### How to Setup Your Chip clip
+> **How to Setup Your Chip clip**
 > Take your chip clip, and a safety pin (recommended) or paperclip. If you are using a safety pin, cut off the bigger side.\
 > Put the paperclip or safety pin into holes 3 and 8. To find these, find the red wire. This is pin 1. From there, you can find the other pins.
 > With pin 1 in the top left, pin 3 would be the 3rd pin in the top row, and pin 8 would be directly under pin 1.
@@ -56,7 +56,7 @@ flashrom --wp-enable
 ```
 Hit `esc + refresh + power` to go back into the recovery menu and now boot onto your v124 recovery USB and follow its instructions. Follow the [keyroll steps](#fixing-rolled-keys) if you keyroll again.
 
-After the recovery process is complete, choose to boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2` and run:
+After the recovery process is complete, choose to boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2`. If you are prompted to login on the console, try to login as `chronos` with no password, and elevate to root by using `sudo -i`. If that does not work, you can also try logging in as `root` and then using `test0000` as your password. After you have access to the shell, run the following commands.
 ```
 tpm_manager_client take_ownership
 cryptohome --action=remove_firmware_management_parameters
