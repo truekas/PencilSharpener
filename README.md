@@ -60,7 +60,7 @@ Hit `esc + refresh + power` to go back into the recovery menu and now boot onto 
 
 After the recovery process is complete, choose to boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2`. 
 
-If you are prompted to login on the console, try to login as `chronos` with no password, and elevate to root by using `sudo -i`. If that does not work, you can also try logging in as `root` and then using `test0000` as your password. After you have access to the shell, run the following commands.
+If you are prompted to login on the console, try to login as `chronos` with no password, and elevate to root by using `sudo -i`. If that does not work, you can also try logging in as `root` and then using `test0000` as your password. After you have access to the shell, run the following commands:
 ```
 tpm_manager_client take_ownership
 cryptohome --action=remove_firmware_management_parameters
