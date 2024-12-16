@@ -57,7 +57,7 @@ flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
 flashrom --wp-enable
 ```
-Hit `esc + refresh + power` to go back into the recovery menu, boot onto your v124 recovery USB and follow its instructions. Follow the [rolled keys steps](#fixing-rolled-keys) if you keyroll again.
+Hit `esc + refresh + power` to go back into the recovery menu, boot onto your v124 recovery USB, and follow its instructions. Follow the [rolled keys steps](#fixing-rolled-keys) if you keyroll again.
 
 After the recovery process is complete, choose to boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2`. 
 
