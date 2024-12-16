@@ -107,6 +107,8 @@ flashrom --wp-enable
 ## Re-Enrolling
 It is possible to re-enroll your device by accessing a VT2 shell, typing `vpd -i RW_VPD -s check_enrollment=1`, and then powerwashing the device using `CTRL + ALT + SHIFT + R`.
 
+<img src="https://github.com/truekas/PencilSharpener/blob/main/src/enrolled.png?raw=true" alt="ch341a"/>
+
 ## Citations (Not MLA)
 [Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
 <br>
