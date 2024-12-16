@@ -78,7 +78,7 @@ Next, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:always`, 
 **IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**
 After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the system during boot. 
 
-**Ideally, this should not be nescessary due to running `flashrom --wp-enable` previously. This only exists for you to be able to recover your device if you miss that command or somehow get stuck with rolled keys.**
+**Ideally, this should not be necessary due to running `flashrom --wp-enable` previously. This only exists for you to be able to recover your device if you miss that command or somehow get stuck with rolled keys.**
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/rolledkeys.png?raw=true" alt="ch341a and shell"/>
 
