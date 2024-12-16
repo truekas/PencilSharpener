@@ -18,7 +18,7 @@ This writeup demonstrates how Google's tsunami enrollment patch, released on v11
 **Special Thanks To:**
 - Fairfax County Public Schools Deparment of Information Technology :D 
 - Appleflyer | who's blog post helped us to write improved instructions on setting up the ch341a
-- Kilobyte | Helping with re-enrollment processs
+- Kilobyte | Helping with re-enrollment process
 - Kelpstream | Gave continuous feedback and helped test Pencil Sharpener
   
 ## The Exploit
