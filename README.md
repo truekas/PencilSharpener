@@ -72,6 +72,10 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 
 Next, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
+https://github.com/truekas/PencilSharpener/blob/main/src/unenrolled.png?raw=true
+
+<img src="https://github.com/truekas/PencilSharpener/blob/main/src/unenrolled.png?raw=true" alt="2.png"/>
+
 ## Fixing Rolled Keys
 **IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**
 After downgrading or trying to use Sh1mmer, some systems will keyroll and prevent users from booting. This is because the recovery kernel data key will fail to validate the system during boot. 
