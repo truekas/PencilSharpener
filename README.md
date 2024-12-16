@@ -72,8 +72,6 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 
 Next, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
-https://github.com/truekas/PencilSharpener/blob/main/src/unenrolled.png?raw=true
-
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/unenrolled.png?raw=true" alt="2.png"/>
 
 ## Fixing Rolled Keys
