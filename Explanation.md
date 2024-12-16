@@ -1,4 +1,4 @@
-# Pencil Sharpener Explanation 
+# Pencil Sharpener Walkthrough Discription 
 By disabling write protection on the flash chip through bridging pins 3 and 8, we can enter into developer mode. This also lets us boot into Sh1mmer.
 
 However, at this point Sh1mmer cannot boot as the recovery kernel data key will fail to validate the shim and refuse to work. Fortunately, the correct keys are stored in a recovery file, so we can still extract and re-flash them.
