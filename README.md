@@ -13,12 +13,12 @@ If you're looking at this writeup, this exploit has been patched. Recently, Goog
 If you are an administrator, we recommend that you set the `DeviceMinimumVersion` in Google Admin to ensure that all new Chromebooks have been patched. We also recommend that you check the policy sync dates for all users on Cr50 Chromebooks to monitor exploitation.
 
 ## Introduction 
-This writeup demonstrates how Google's tsunami enrollment patch, released on v114, can be bypassed on newer mainboards with the Ti50 chip on Kv4. The exploit uses a modified version of the original pencil exploit to bypass FWMP and VPD and prevent the system from bricking. If you are curious about Pencil Sharpener, you can check out our [explanation](https://github.com/truekas/PencilSharpener/blob/main/Explanation.md) of why it works.
+This writeup demonstrates how Google's tsunami enrollment patch, released on v114, can be bypassed on newer mainboards with the Ti50 chip. The exploit uses a modified version of the original pencil exploit to unenroll the system, and prevent it from bricking.
 
 **Special Thanks To:**
-- Fairfax County Public Schools Information Technology Deparment 
-- Appleflyer | who's blog post helped us to write improved instructions on attaching the ch341a
-- Kilobyte | Helping with re-enrollment processs command
+- Fairfax County Public Schools Deparment of Information Technology :D 
+- Appleflyer | who's blog post helped us to write improved instructions on setting up the ch341a
+- Kilobyte | Helping with re-enrollment processs
 - Kelpstream | Gave continuous feedback and helped test Pencil Sharpener
   
 ## The Exploit
