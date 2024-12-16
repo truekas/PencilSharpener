@@ -72,7 +72,7 @@ Now make sure that the battery is re-inserted on the mainboard and run `gsctool 
 
 Next, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
-<img src="https://github.com/truekas/PencilSharpener/blob/main/src/unenrolled.png?raw=true" alt="2.png"/>
+<img src="https://github.com/truekas/PencilSharpener/blob/main/src/unenrolled.png?raw=true" alt="unenrolled"/>
 
 ## Fixing Rolled Keys
 **IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**
@@ -80,7 +80,7 @@ After downgrading or trying to use Sh1mmer, some systems will keyroll and preven
 
 **Ideally, this should not be nescessary due to running `flashrom --wp-enable` previously. This only exists for you to be able to recover your device if you miss that command or somehow get stuck with rolled keys.**
 
-<img src="https://github.com/CaenJones/Pencil-Sharpener-Kv4/blob/main/src/rolledkeys.png?raw=true" alt="ch341a"/>
+<img src="https://github.com/truekas/PencilSharpener/blob/main/src/rolledkeys.png?raw=true" alt="ch341a and shell"/>
 
 This issue is fixable by flashing the correct keys to the system. Here's how to do it:
 
@@ -107,7 +107,7 @@ flashrom --wp-enable
 ## Re-Enrolling
 It is possible to re-enroll your device by accessing a VT2 shell, typing `vpd -i RW_VPD -s check_enrollment=1`, and then powerwashing the device using `CTRL + ALT + SHIFT + R`.
 
-<img src="https://github.com/truekas/PencilSharpener/blob/main/src/enrolled.png?raw=true" alt="ch341a"/>
+<img src="https://github.com/truekas/PencilSharpener/blob/main/src/enrolled.png?raw=true" alt="enrolled screen"/>
 
 ## Citations (Not MLA)
 [Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
