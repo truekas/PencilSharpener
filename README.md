@@ -8,9 +8,9 @@
 > This writeup is for educational purposes only. Do not use this exploit on your organization's systems without permission. Remember that your orginization's Chromebook is not your personal device. Nobody is responsible for any touble that happens because of this exploit.
 
 ## Hey There!
-If you're looking at this writeup, this exploit has been patched. Recently, Google rolled all shim keys on all Ti50 boards during the update to Kv5, making it impossible to boot into Sh1mmer or use this exploit. We decided to release this writeup after the patch, to ensure that no damage is caused to the devices of schools and companies. 
+If you're looking at this writeup, this exploit has been patched. Recently, Google pushed a security update that detects changes to the write-protected (read-only) portion of the Chromebook's firmware. This prevents the use of this exploit on up to-date systems. We decided to release this writeup after the patch, to ensure that no damage is caused to the devices of schools and companies. 
 
-If you are an administrator, we recommend that you set the `DeviceMinimumVersion` in Google Admin to ensure that all new Chromebooks have been patched. We also recommend that you check the policy sync dates for all users on Cr50 Chromebooks to monitor exploitation.
+If you are an administrator, we recommend that you set the `DeviceMinimumVersion` in Google Admin to ensure that all new Chromebooks have been patched. We also recommend that you check the policy sync dates for all users on Cr50 Chromebooks to monitor unenrollment through other exploits.
 
 ## Introduction 
 This writeup demonstrates how Google's tsunami enrollment patch, released on v114, can be bypassed on newer mainboards with the Ti50 chip. The exploit uses a modified version of the original pencil exploit to unenroll the system, and prevent it from bricking.
