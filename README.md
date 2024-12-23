@@ -48,7 +48,7 @@ Then, disconnect the battery from the mainboard and locate your device's Flash C
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/2.png?raw=true" alt="2.png"/>
 
-Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d`. As soon as the screen goes black, press the keys to re-open the recovery menu. 
+Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d` and as soon as the screen goes black, press the keys to re-open the recovery menu. 
 
 Insert your Sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to re-flash the correct keys to the device using instructions in the [rolled keys](#fixing-rolled-keys) section.
 
@@ -77,11 +77,11 @@ Afterward, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:alwa
 
 ## Fixing Rolled Keys
 **IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**
-During the downgrade process or while trying to use Sh1mmer you may be unable to boot onto the media. This is because your systems shim keys have been rolled in an update. 
+During the downgrade process or while trying to use Sh1mmer, you may be unable to boot onto the live media. This is because your systems shim keys have been rolled in an update. 
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/rolledkeys.png?raw=true" alt="ch341a and shell"/>
 
-This issue is fixable by flashing the correct keys to the system. Here's how to do it:
+This issue is fixable by re-flashing the correct keys to the system. Here's how to do it:
 
 First, take your ch341a flash programmer and attach it to your chip clip (the red wire connects to number 1 on the ch341a). Take the end of your chip clip, and re-attach it to your flash chip. Now [connect to your device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) though your linux system and run the following commands: (this can also technically be done through VT2)
 
