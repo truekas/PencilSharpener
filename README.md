@@ -13,7 +13,7 @@ If you're looking at this writeup, this exploit has been patched. Recently, Goog
 If you are an administrator, we recommend that you set the `DeviceMinimumVersion` in Google Admin to ensure that all new Chromebooks have been patched. We also recommend that you check the policy sync dates for all users on Cr50 Chromebooks to monitor unenrollment through other exploits.
 
 ## Introduction 
-This writeup demonstrates how Google's Fog patch can be bypassed on Ti50 systems. The exploit uses a modified version of the original pencil method to unenroll the system and prevent it from bricking.
+This writeup demonstrates how Google's Fog unenrollment patch can be bypassed on Ti50 systems. The exploit uses a modified version of the original pencil method to unenroll the system and prevent it from bricking.
 
 **Special Thanks To:**
 - Fairfax County Public Schools Deparment of Information Technology :D 
