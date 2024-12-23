@@ -77,7 +77,7 @@ Afterward, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:alwa
 
 ## Fixing Rolled Keys
 **IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**
-During the downgrade process or while trying to use Sh1mmer, you may be unable to boot onto the live media. This is because your systems shim keys have been rolled in an update. 
+During the downgrade process or while trying to use Sh1mmer, you may be unable to boot onto the live media. This is because your system's shim keys have been rolled in an update. 
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/rolledkeys.png?raw=true" alt="ch341a and shell"/>
 
