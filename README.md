@@ -16,6 +16,7 @@ If you are an administrator, we recommend that you set the `DeviceMinimumVersion
 This writeup demonstrates how Google's Fog unenrollment patch can be bypassed on Ti50 systems. The exploit uses a modified version of the original pencil method to unenroll the system and prevent it from bricking.
 
 You can view our video demo on Odysee!
+<br>
 [![Video Demo](https://github.com/truekas/PencilSharpener/blob/main/src/Cover.png?raw=true)](https://ody.sh/xySDCFhvHi)
 
 **Special Thanks To:**
