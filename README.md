@@ -23,8 +23,8 @@ You can view our video proof of concept / walkthrough on Odysee:
 - Fairfax County Public Schools Department of Information Technology :D 
 - CoolElectronics | Making the original pencil exploit
 - Kelpstream         | Making the public disclosure / VRP process possible
-- Appleflyer           | Blog post improved instructions on attacking the ch341a
-- MW developers  | Building Sh1mmer 
+- Appleflyer           | Blog post improved instructions on setting up the ch341a
+- MW developers  | Developing Sh1mmer and figuring out how to re-enroll
   
 ## The Exploit
 **What you need:**
