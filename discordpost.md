@@ -6,7 +6,7 @@ You can view the GitHub writeup here: https://github.com/truekas/PencilSharpener
 
 Or you can check out our proof of concept video: https://ody.sh/xySDCFhvHi
 
-**Special Thanks To:**
+## Special Thanks To:
 - Fairfax County Public Schools Department of Information Technology (ohno im doxxed)
 - CoolElectronics | Making the original pencil exploit
 - Kelpstream         | Making the public disclosure / VRP process possible
