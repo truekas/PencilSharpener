@@ -17,6 +17,7 @@ This writeup demonstrates how Google's Fog unenrollment patch can be bypassed on
 
 You can view our video proof of concept / walkthrough on Odysee:
 <br>
+<br>
 [![Video Demo](https://github.com/truekas/PencilSharpener/blob/main/src/Cover.png?raw=true)](https://ody.sh/xySDCFhvHi)
 
 **Special Thanks To:**
