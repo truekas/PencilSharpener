@@ -20,10 +20,11 @@ You can view our video proof of concept / walkthrough on Odysee:
 [![Video Demo](https://github.com/truekas/PencilSharpener/blob/main/src/Cover.png?raw=true)](https://ody.sh/xySDCFhvHi)
 
 **Special Thanks To:**
-- Fairfax County Public Schools Deparment of Information Technology :D 
-- Appleflyer | who's blog post helped us to write improved instructions on setting up the ch341a
-- Kilobyte | Helping with re-enrollment process
-- Kelpstream | Gave continuous feedback and helped test Pencil Sharpener
+- Fairfax County Public Schools Department of Information Technology :D 
+- CoolElectronics | Making the original pencil exploit
+- Kelpstream         | Making the public disclosure / VRP process possible
+- Appleflyer           | Blog post improved instructions on attacking the ch341a
+- MW developers  | Building Sh1mmer 
   
 ## The Exploit
 **What you need:**
