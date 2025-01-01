@@ -20,7 +20,8 @@ You can view our video proof of concept / walkthrough on Odysee:
 [![Video Demo](https://github.com/truekas/PencilSharpener/blob/main/src/Cover.png?raw=true)](https://ody.sh/xySDCFhvHi)
 
 **Special Thanks To:**
-- Fairfax County Public Schools Department of Information Technology :D 
+- Fairfax County Public Schools Department of Information Technology :D
+- Sedalia School District 200 | Making recycled devices available for testing
 - CoolElectronics | Making the original pencil exploit
 - Kelpstream         | Making the public disclosure / VRP process possible
 - Appleflyer           | Blog post improved instructions on setting up the ch341a
