@@ -8,9 +8,9 @@
 > This writeup is for educational purposes only. Do not use this exploit on your organization's systems without permission. Remember that your orginization's Chromebook is not your personal device. Nobody is responsible for any touble that happens because of this exploit.
 
 ## Hey There!
-If you're looking at this writeup, this exploit has been patched. Recently, Google pushed a security update that detects changes to the write-protected (read-only) portion of the Chromebook's firmware. This prevents the use of this exploit on up to-date systems. We decided to release this writeup after the patch, to ensure that no damage is caused to the devices of schools and companies. 
+If you're looking at this writeup, this exploit has been patched. Recently, Google pushed a security update that detects changes to the write-protected (read-only) portion of the Chromebook's firmware. This prevents the use of this exploit on up to-date systems. 
 
-If you are an administrator, we recommend that you set the `DeviceMinimumVersion` in Google Admin to ensure that all new Chromebooks have been patched. We also recommend that you check the policy sync dates for all users on Cr50 Chromebooks to monitor unenrollment through other exploits.
+If you are an administrator, we recommend that you set `DeviceMinimumVersion` in Google Admin to ensure that all new Chromebooks have been updated. We also recommend that you check the policy sync dates for all users on Cr50 Chromebooks to monitor unenrollment through other exploits.
 
 ## Introduction 
 This writeup demonstrates how Google's Fog unenrollment patch can be bypassed on Ti50 systems. The exploit uses a modified version of the original pencil method to unenroll the system and prevent it from bricking.
