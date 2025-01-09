@@ -1,5 +1,5 @@
 ## What is it?
-Pencil Sharpener is an exploit developed by @caenjones and @kas that allows users to unenroll non factory-keyrolled Ti50 Chromebooks using a modified version of the pencil method. (no vrp tho)
+Pencil Sharpener is an exploit developed by @caenjones and @kas that allows users to unenroll non factory-keyrolled Ti50 Chromebooks using a modified version of the pencil method. (why no google money 😢)
 
 The writeup/walkthough can be viewed at: https://github.com/truekas/PencilSharpener (please star the repo it validates my life choices)
 
