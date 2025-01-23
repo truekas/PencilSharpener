@@ -23,7 +23,7 @@ You can watch our proof of concept video on Odysee, which was generously created
 - Fairfax County Public Schools Department of Information Technology :D
 - Sedalia School District 200 | Making recycled devices available for testing
 - CoolElectronics | Making the original pencil exploit
-- Kelpstream         | Helping with public disclosure 
+- Kelsea          | Helping with public disclosure 
 - Appleflyer         | Blog post improved instructions on setting up the ch341a
 - Unamed Student     | Creating the Pencil Sharpener demo video
 - MW developers  | Developing Sh1mmer and figuring out how to re-enroll
