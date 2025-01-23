@@ -5,7 +5,7 @@
 > DURING THE EXPLOIT, MAKE SURE THE CHROMEBOOK STAYS PLUGGED IN TO A CHARGER AT ALL TIMES (EXCEPT WHILE BRIDGING THE WP PINS). THE SYSTEM WILL BRICK IF THIS IS NOT FOLLOWED.
 
 > [!IMPORTANT]
-> This writeup is for educational purposes only. Do not use this exploit on your organization's systems without permission. Remember that your orginization's Chromebook is not your personal device. Nobody is responsible for any touble that happens because of this exploit.
+> This exploit is for non-factory keyrolled Ti50 systems only, which means that your Chromebook had its shim keys changed in an update and not during assembly. We are not responsible for any damage done to your organization or your device. This writeup is for educational purposes only.
 
 ## Hey There!
 If you're looking at this writeup, this exploit has been patched. Recently, Google pushed a security update that detects changes to the write-protected (read-only) portion of the Chromebook's firmware. This prevents the use of this exploit on v133 and above. 
@@ -13,7 +13,7 @@ If you're looking at this writeup, this exploit has been patched. Recently, Goog
 If you are an administrator, we recommend that you set `DeviceMinimumVersion` in Google Admin to ensure that all Ti50 Chromebooks have been updated. 
 
 ## Introduction 
-This writeup demonstrates how Google's Fog unenrollment patch can be bypassed on Ti50 systems. The exploit uses a modified version of the original pencil method to unenroll the system and prevent it from bricking.
+The Pencil Method fails on Ti50 because of a special CCD flag that blocks unsigned RO firmware from booting. Modifying GBB flags which are located in the RO firmware alters the firmware, causing it to be perceived as "unsigned" which the system to brick. Pencil Sharpener mitigates this patch by using a modified workflow that allows for unenrollment without bricking the system.
 
 You can watch our proof of concept video on Odysee, which was generously created by another student:
 <br>
