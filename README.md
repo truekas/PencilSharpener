@@ -8,7 +8,7 @@
 > This writeup is for educational purposes only. Do not use this exploit on your organization's systems without permission. Remember that your orginization's Chromebook is not your personal device. Nobody is responsible for any touble that happens because of this exploit.
 
 ## Hey There!
-If you're looking at this writeup, this exploit has been patched. Recently, Google pushed a security update that detects changes to the write-protected (read-only) portion of the Chromebook's firmware. This prevents the use of this exploit on up to-date systems. 
+If you're looking at this writeup, this exploit has been patched. Recently, Google pushed a security update that detects changes to the write-protected (read-only) portion of the Chromebook's firmware. This prevents the use of this exploit on v133 and above. 
 
 If you are an administrator, we recommend that you set `DeviceMinimumVersion` in Google Admin to ensure that all Ti50 Chromebooks have been updated. 
 
