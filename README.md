@@ -13,15 +13,14 @@ If you're looking at this writeup, this exploit has been patched. Recently, Goog
 If you are an administrator, we recommend that you set `DeviceMinimumVersion` in Google Admin to ensure that all Ti50 Chromebooks have been updated. 
 
 ## Introduction 
-The Pencil Method fails on Ti50 because of a special CCD flag that blocks unsigned RO firmware from booting. Modifying GBB flags which are located in the RO firmware alters the firmware, causing it to be perceived as "unsigned" which the system to brick. Pencil Sharpener mitigates this patch by using a modified workflow that allows for unenrollment without bricking the system.
+Pencil Sharpener is an exploit created by CaenJones and KAS, that uses a modified version of the original Pencil Method to unenroll the system without the device bricking.
 
-You can watch our proof of concept video on Odysee, which was generously created by another student:
+You can watch our proof of concept video on Odysee, which was generously given to us by another student:
 <br>
 [![Video Demo](https://github.com/truekas/PencilSharpener/blob/main/src/Cover.png?raw=true)](https://ody.sh/xySDCFhvHi)
 
 **Special Thanks To:**
 - Fairfax County Public Schools Department of Information Technology :D
-- Sedalia School District 200 | Making recycled devices available for testing
 - CoolElectronics | Making the original pencil exploit
 - Kelsea          | Helping with public disclosure 
 - Appleflyer         | Blog post improved instructions on setting up the ch341a
@@ -41,7 +40,7 @@ You can watch our proof of concept video on Odysee, which was generously created
 - A few braincells
 - Lots of time
 
-First, fully power off and unplug your device, flip it over, and open the back to gain access to the mainboard.
+First, fully power off and unplug your device, flip it over, and open the back to access the mainboard.
 
 > [!TIP] 
 > **How to Setup Your Chip clip:**
@@ -55,19 +54,19 @@ Then, disconnect the battery from the mainboard and locate your device's Flash C
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/2.png?raw=true" alt="2.png"/>
 
-Afterward, re-insert your charger AND KEEP IT PLUGGED IN while pushing `esc + refresh + power` to enter the device recovery menu. Then press `ctrl + d` and as soon as the screen goes black, press the keys to re-open the recovery menu. 
+Flip your laptop to its side with the charging port facing up and with the pins still bridged. Plugin your device and push `esc + refresh + power` to enter the device recovery menu, then press `ctrl + d`. As soon as the screen goes black, press the keys to re-open the recovery menu. 
 
 Insert your Sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to re-flash the correct keys to the device using instructions in the [rolled keys](#fixing-rolled-keys) section.
 
-Re-open the recovery menu and boot into Sh1mmer. You should choose `utilities > unenroll` and after it gives an error, open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
+After booting into Sh1mmer, you should choose `utilities > unenroll`. After it gives an error, open the bash console WHILE MAKING SURE THE PINS ARE STILL BRIDGED and run:
 ```
 flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
 flashrom --wp-enable
 ```
-Hit `esc + refresh + power` to go back into the recovery menu and boot onto your v124 recovery USB. Follow the [rolled keys steps](#fixing-rolled-keys) if you keyroll again.
+Hit `esc + refresh + power` to go back into the recovery menu and boot onto your v124 recovery USB. Follow the [rolled keys steps](#fixing-rolled-keys) if you have issues before or after the recovery process.
 
-After the recovery process is complete, choose to boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2`. 
+After the recovery is complete, boot into ChromeOS. Then switch to the VT2 console on the sign-in screen by pressing `ctrl + alt + f2`. 
 
 If you are prompted to login on the console, try to login as `chronos` with no password, and elevate to root by using `sudo -i`. If that does not work, you can also try logging in as `root` and then using `test0000` as your password. After you have access to the shell, run the following commands:
 ```
@@ -76,7 +75,7 @@ cryptohome --action=remove_firmware_management_parameters
 crossystem dev_boot_usb=1
 ```
 
-Make sure that the battery is re-inserted on the mainboard and run `gsctool -a -o`. Follow the prompts to push the power button and the system should automatically reboot. When the device turns back on, re-open the recovery menu and re-enable devmode.
+Reconnect the battery to the motherboard, and run `gsctool -a -o`. Follow the prompts to push the power button and the system should automatically reboot. When the device turns back on, re-open the recovery menu and re-enable devmode.
 
 Afterward, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:always`, and the device should be unenrolled.
 
@@ -84,15 +83,15 @@ Afterward, go back to the VT2 console, run `gsctool -a -I AllowUnverifiedRo:alwa
 
 ## Fixing Rolled Keys
 **IMPORTANT: THIS WILL NOT UNROLL FACTORY ROLLED KEYS!!**
-During the downgrade process or while trying to use Sh1mmer, you may be unable to boot onto the live media. This is because your system's shim keys have been rolled in an update. 
+During the downgrade process or while trying to use Sh1mmer, you may be unable to boot onto the devices. This is because your system's shim keys have been changed in an update. 
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/rolledkeys.png?raw=true" alt="ch341a and shell"/>
 
 This issue is fixable by re-flashing the correct keys to the system. Here's how to do it:
 
-First, take your ch341a flash programmer and attach it to your chip clip (the red wire connects to number 1 on the ch341a). Take the end of your chip clip, and re-attach it to your flash chip. Now [connect to your device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) though your linux system and run the following commands: (this can also technically be done through VT2)
+First, take your ch341a flash programmer and attach it to your chip clip (the red wire connects to number 1 on the ch341a). Take the end of your chip clip, and re-attach it to your flash chip. Now [connect to your device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) though your linux system and run the following commands: 
 
-If you are not using a flash programmer, remove `-p ch341a_spi` from the commands you run.
+If you are somehow not using a flash programmer, remove `-p ch341a_spi` from the commands you run.
 
 ```bash
 flashrom --wp-disable
