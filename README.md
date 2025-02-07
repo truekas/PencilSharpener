@@ -28,7 +28,7 @@ You can watch our proof of concept video on Odysee, which was generously given t
 - MW developers  | Developing Sh1mmer and figuring out how to re-enroll
   
 ## The Exploit
-**The materials you need** ([This kit](https://www.amazon.com/AiTrip-EEPROM-Programmer-CH341A-Adapter/dp/B07VNVVXW6) is recommended )
+**The materials you need** ([this kit](https://www.amazon.com/AiTrip-EEPROM-Programmer-CH341A-Adapter/dp/B07VNVVXW6) is recommended )
 
 - SOIC-8 or WSON-8 chip clip
 - Paperclip or Safety Pin
