@@ -89,7 +89,7 @@ During the downgrade process or while trying to use Sh1mmer, you may be unable t
 
 This issue is fixable by re-flashing the correct keys to the system. Here's how to do it:
 
-First, take your ch341a flash programmer and attach it to your chip clip (the red wire connects to number 1 on the ch341a). Take the end of your chip clip, and re-attach it to your flash chip. Now [connect to your device](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) though your linux system and run the following commands: 
+First, take your ch341a flash programmer and attach it to your chip clip (the red wire connects to number 1 on the ch341a). Take the end of your chip clip, and re-attach it to your flash chip. Now [connect](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html#prepping-to-flash) using your linux system and run the following commands: 
 
 If you are not using a flash programmer, remove `-p ch341a_spi` from the commands you run.
 
@@ -100,7 +100,7 @@ futility gbb -p ch341a_spi -s -r file.bin
 flashrom --wp-enable
 ```
 
-If you are using a device **with a Nissa board**, you can use our working example with the correct keys already extracted. You should still remove `-p ch341a_spi` if you aren't using a programmer. 
+If you are using **a Nissa board**, you can use our working example with the correct keys already extracted. You should still remove `-p ch341a_spi` if you aren't using a programmer. 
 
 ```bash
 flashrom --wp-disable
