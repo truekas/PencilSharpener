@@ -29,16 +29,16 @@ You can watch our proof of concept video on Odysee, which was generously given t
   
 ## The Exploit
 **What you need:**
-- Chip Clip
+
+[This kit](https://www.amazon.com/AiTrip-EEPROM-Programmer-CH341A-Adapter/dp/B07VNVVXW6) is recommended 
+- SOIC-8 or WSON-8 chip clip
 - Paperclip or Safety Pin
-- A Linux system with flashrom installed
+- Linux system with flashrom installed
 - A screwdriver (duh)
-- Sh1mmer image for your device
+- Sh1mmer image for your board
 - Working charger
 - Ch341a Flash Programmer
 - A ChromeOS recovery USB for v124
-- A few braincells
-- Lots of time
 
 First, fully power off and unplug your device, flip it over, and open the back to access the mainboard.
 
