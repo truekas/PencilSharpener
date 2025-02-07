@@ -8,7 +8,7 @@
 > This exploit is for non-factory keyrolled Ti50 systems only, meaning that your Chromebook had its shim keys changed in an update and not during its assembly. We are not responsible for any damage done to your organization or your device. This writeup is for educational purposes only.
 
 ## Hey There!
-If you're looking at this writeup, this exploit (may have) been patched. Recently, Google (may have) pushed a security update that detects changes to the write-protected portion of the Chromebook's firmware. This prevents the use of this exploit on v133 and above. 
+If you're looking at this writeup, this exploit (may have) been patched. Recently, Google (might) push a security update that detects changes to the write-protected portion of the Chromebook's firmware. This prevents the use of this exploit on v133 and above. 
 
 If you are an administrator, we recommend that you set `DeviceMinimumVersion` in Google Admin to ensure that all Ti50 Chromebooks have been updated. 
 
