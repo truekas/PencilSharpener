@@ -15,7 +15,7 @@ If you are an administrator, we recommend that you set `DeviceMinimumVersion` in
 ## Introduction 
 Pencil Sharpener is an exploit created by CaenJones and KAS, that uses a modified version of the original Pencil Method to unenroll the system without the device bricking.
 
-You can watch our proof of concept video on Odysee, which was generously given to us by another student:
+You can watch our proof of concept video on Odysee, which was generously created by another student:
 <br>
 [![Video Demo](https://github.com/truekas/PencilSharpener/blob/main/src/Cover.png?raw=true)](https://ody.sh/xySDCFhvHi)
 
