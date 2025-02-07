@@ -20,15 +20,15 @@ You can watch our proof of concept video on Odysee, which was generously given t
 [![Video Demo](https://github.com/truekas/PencilSharpener/blob/main/src/Cover.png?raw=true)](https://ody.sh/xySDCFhvHi)
 
 **Special Thanks To:**
-- Fairfax County Public Schools Department of Information Technology :D
-- CoolElectronics | Making the original pencil exploit
-- Kelsea          | Helping with public disclosure 
-- Appleflyer         | Blog post improved instructions on setting up the ch341a
+- FCPS DIT :D        | Letting us post
+- CoolElectronics    | Original Pencil Method
+- Kelsea             | Miku Energy Drink
+- Appleflyer         | Blog helped improve Ch341a attachment instructions
 - Unamed Student     | Creating the Pencil Sharpener demo video
-- MW developers  | Developing Sh1mmer and figuring out how to re-enroll
+- Mercury Workshop   | Sh1mmer 
   
 ## The Exploit
-**The materials you need** ([this kit](https://www.amazon.com/AiTrip-EEPROM-Programmer-CH341A-Adapter/dp/B07VNVVXW6) is recommended )
+**The materials you need:** ([this kit](https://www.amazon.com/AiTrip-EEPROM-Programmer-CH341A-Adapter/dp/B07VNVVXW6) is recommended)
 
 - SOIC-8 or WSON-8 chip clip
 - Paperclip or Safety Pin
@@ -38,6 +38,7 @@ You can watch our proof of concept video on Odysee, which was generously given t
 - Working charger
 - Ch341a Flash Programmer
 - A ChromeOS recovery USB for v124
+- Lots of time and a few brain cells
 
 First, fully power off and unplug your device, flip it over, and open the back to access the mainboard.
 
