@@ -13,7 +13,7 @@ If you're looking at this writeup, this exploit (may have) been patched. Google 
 If you are an administrator, we recommend that you set `DeviceMinimumVersion` in Google Admin to ensure that all Ti50 Chromebooks have been updated. 
 
 ## Introduction 
-Pencil Sharpener is an exploit created by CaenJones and KAS, that uses a modified version of the original Pencil Method to unenroll the system without the device bricking.
+Pencil Sharpener is an exploit created by [CaenJones](https://github.com/vcc3v) and [KAS](https://github.com/truekas) that uses a modified version of the original Pencil Method to unenroll the system without bricking the device.
 
 You can watch our proof of concept video on Odysee, which was generously created by another student:
 <br>
