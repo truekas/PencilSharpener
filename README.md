@@ -64,6 +64,9 @@ flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
 flashrom --wp-enable
 ```
+> [!IMPORTANT]
+> On newer versions (about >131, but I'm not sure exactly), disabling rootfs verification in sh1mmer is nescessary for the recovery to work.
+
 Hit `esc + refresh + power` to return to the recovery menu and boot onto your v124 recovery USB. If you have any issues before or after the recovery process, follow the [rolled keys steps](#fixing-rolled-keys).
 
 After the recovery is complete, boot into ChromeOS. Then, on the sign-in screen switch to VT2 by pressing `ctrl + alt + f2`. 
