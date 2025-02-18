@@ -65,7 +65,7 @@ flashrom --wp-disable
 flashrom --wp-enable
 ```
 > [!IMPORTANT]
-> On newer versions (about >131, but I'm not sure exactly), disabling rootfs verification in sh1mmer is nescessary for the recovery to work.
+> On newer versions, if you get an error saying "owner has disabled downgrading" or "verified images only" you must go into sh1mmer and turn off rootfs verification.
 
 Hit `esc + refresh + power` to return to the recovery menu and boot onto your v124 recovery USB. If you have any issues before or after the recovery process, follow the [rolled keys steps](#fixing-rolled-keys).
 
