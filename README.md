@@ -54,7 +54,7 @@ Then, disconnect the battery from the mainboard and locate your Flash Chip. Brid
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/2.png?raw=true" alt="2.png"/>
 
-Flip your laptop to its side with the charging port facing up and the pins still bridged. Plugin your device and push `esc + refresh + power` to enter the device recovery menu, then press `ctrl + d`. As soon as the screen goes black, press the keys to re-open the recovery menu. 
+Flip your laptop to its side with the charging port facing up and the pins still bridged. Plug in your device and push `esc + refresh + power` to enter the device recovery menu, then press `ctrl + d`. As soon as the screen goes black, press the keys to re-open the recovery menu. 
 
 Insert your Sh1mmer USB and then choose to boot from it. You may get a `no valid image` error. If this happens, you need to re-flash the correct keys to the device using instructions in the [rolled keys](#fixing-rolled-keys) section.
 
@@ -64,11 +64,11 @@ flashrom --wp-disable
 /usr/share/vboot/bin/set_gbb_flags.sh 0x80b3
 flashrom --wp-enable
 ```
-Hit `esc + refresh + power` to return to the recovery menu and boot onto your v124 recovery USB. If you have any issues before or after the recovery process, Follow the [rolled keys steps](#fixing-rolled-keys).
+Hit `esc + refresh + power` to return to the recovery menu and boot onto your v124 recovery USB. If you have any issues before or after the recovery process, follow the [rolled keys steps](#fixing-rolled-keys).
 
 After the recovery is complete, boot into ChromeOS. Then, on the sign-in screen switch to VT2 by pressing `ctrl + alt + f2`. 
 
-If you are prompted to login on the console, try to login as `chronos` with no password, and elevate to root by using `sudo -i`. If that does not work, you can try logging in as `root` and then using `test0000` as your password. After you have access to the shell, run the following commands:
+If you are prompted to login on the console, try to log in as `chronos` with no password, and elevate to root by using `sudo -i`. If that does not work, you can try logging in as `root` and then using `test0000` as your password. After you have access to the shell, run the following commands:
 ```
 tpm_manager_client take_ownership
 cryptohome --action=remove_firmware_management_parameters
