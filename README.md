@@ -5,7 +5,7 @@
 > DURING THE EXPLOIT, MAKE SURE THE CHROMEBOOK STAYS PLUGGED INTO A CHARGER AT ALL TIMES (EXCEPT WHILE BRIDGING THE WP PINS). THE SYSTEM WILL BRICK IF THIS IS NOT FOLLOWED.
 
 > [!IMPORTANT]
-> This exploit is for non-factory keyrolled Ti50 systems only, meaning that your Chromebook had its shim keys changed in an update and not during its assembly. We are not responsible for any damage done to your organization or your device. This writeup is for educational purposes only.
+> This exploit is for *non-factory keyrolled* Ti50 systems only, meaning that your Chromebook had its *shim keys changed in an update* and not during its assembly. We are not responsible for any damage done to your organization or your device. This writeup is for educational purposes only.
 
 ## Hey There!
 If you're looking at this writeup, this exploit (may have) been patched. Google (will eventually) push a security update that detects changes to the write-protected portion of the Chromebook's firmware. This prevents the use of this exploit on later versions. 
