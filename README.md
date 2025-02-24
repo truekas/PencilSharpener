@@ -13,7 +13,7 @@ If you're looking at this writeup, this exploit (may have) been patched. Google 
 If you are an administrator, we recommend that you set `DeviceMinimumVersion` in Google Admin to ensure that your Chromebooks have been updated. 
 
 ## Introduction 
-Pencil Sharpener is an exploit that allows users to unenroll non *factory-keyrolled* Ti50 Chromebooks using a modified version of the pencil method. 
+The Pencil Sharpener exploit enables users to unenroll *non-factory-keyrolled* Ti50 Chromebooks using a modified version of the pencil method. This exploit works because the Google Security Chip (GSC) does not verify the hash until the device loses power, allowing users to disable RO verification before the security chip reboots.
 
 You can watch our proof of concept video on Odysee, which was generously created by another student:
 <br>
@@ -28,7 +28,7 @@ You can watch our proof of concept video on Odysee, which was generously created
 - Mercury Workshop   | Sh1mmer 
   
 ## The Exploit
-**The materials you need:** ([this kit](https://www.amazon.com/AiTrip-EEPROM-Programmer-CH341A-Adapter/dp/B07VNVVXW6) is recommended for SOIC-8)
+**The materials you need:** ([this kit](https://www.amazon.com/AiTrip-EEPROM-Programmer-CH341A-Adapter/dp/B07VNVVXW6) is recommended for SOIC-8 chips)
 
 - SOIC-8 or WSON-8 chip clip
 - Paperclip or Safety Pin
