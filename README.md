@@ -10,7 +10,7 @@
 ## Hey There!
 If you're looking at this writeup, this exploit will soon be patched. Google will eventually push a security update that detects changes to the write-protected portion of the Chromebook's firmware. This prevents the use of this exploit on later versions (most likely v134 and above).
 
-If you are an administrator, we recommend that you set `DeviceMinimumVersion` in Google Admin to ensure that your Chromebooks have been updated. 
+If you are an administrator, we recommend that you set `DeviceMinimumVersion` in Google Admin to ensure that your Chromebooks get updated when a fix is available. 
 
 ## Introduction 
 The Pencil Sharpener exploit enables users to unenroll *non-factory-keyrolled* Ti50 Chromebooks using a modified version of the pencil method. This exploit works because the Google Security Chip (GSC) does not verify the hash until the device loses power, allowing users to disable RO verification before the security chip reboots.
