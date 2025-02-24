@@ -28,7 +28,7 @@ You can watch our proof of concept video on Odysee, which was generously created
 - Mercury Workshop   | Sh1mmer 
   
 ## The Exploit
-**The materials you need:** ([this kit](https://www.amazon.com/AiTrip-EEPROM-Programmer-CH341A-Adapter/dp/B07VNVVXW6) is recommended for SOIC-8 chips)
+**The materials you need:** (we reccommend [this kit](https://www.amazon.com/AiTrip-EEPROM-Programmer-CH341A-Adapter/dp/B07VNVVXW6) for SOIC-8 chips and [this one](https://a.co/d/5dswJ8O) for WSON8)
 
 - SOIC-8 or WSON-8 chip clip
 - Paperclip or Safety Pin
