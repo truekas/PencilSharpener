@@ -15,7 +15,7 @@ If you are an administrator, we recommend that you set `DeviceMinimumVersion` in
 ## Introduction 
 The Pencil Sharpener exploit enables users to unenroll *non-factory-keyrolled* Ti50 Chromebooks using a modified version of the pencil method. This exploit works because the Google Security Chip (GSC) does not verify devices hashes until the device loses power, allowing users to disable RO verification before anything is checked.
 
-You can watch our proof of concept video on Odysee, which was generously created by another student:
+You can watch our proof of concept video on Odysee if you need a more visual demonstration of the exploit:
 <br>
 [![Video Demo](https://github.com/truekas/PencilSharpener/blob/main/src/Cover.png?raw=true)](https://ody.sh/xySDCFhvHi)
 
@@ -24,7 +24,6 @@ You can watch our proof of concept video on Odysee, which was generously created
 - CoolElectronics    | Original Pencil Method
 - Kelsea             | Miku Energy Drink
 - Appleflyer         | Blog helped improve Ch341a attachment instructions
-- Unnamed Student     | Creating the Pencil Sharpener demo video
 - Mercury Workshop   | Sh1mmer 
   
 ## The Exploit
