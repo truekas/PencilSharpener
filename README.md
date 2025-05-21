@@ -116,7 +116,7 @@ You can re-enroll your device by accessing a VT2 shell, typing `vpd -i RW_VPD -s
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/enrolled.png?raw=true" alt="enrolled screen"/>
 
-# Sources Used
+# Works Cited
 
 Appleflyer. *"A Simple Guide to Flash WSON-8/SOIC-8 Chromebook Chips."* appleflyer's blog, edited by Appleflyer,  
 14 Apr. 2024, [appleflyers-blog.vercel.app](https://appleflyers-blog.vercel.app/blog/gbbflagflash). Accessed 12 Dec. 2024.
