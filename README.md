@@ -116,37 +116,52 @@ You can re-enroll your device by accessing a VT2 shell, typing `vpd -i RW_VPD -s
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/enrolled.png?raw=true" alt="enrolled screen"/>
 
-## Citations (Not MLA)
-[Breaking chromeOS's enrollment security model: A postmortem](https://blog.coolelectronics.me/breaking-cros-6/)
-<br>
-[Flashing GBB Flags](https://appleflyers-blog.vercel.app/blog/gbbflagflash)
-<br>
-[vboot_reference futility flags](https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/refs/heads/main/futility/docs/cmd_gbb_utility.md)
-<br>
-[Disabling Firmware Write Protection | MrChromebox.tech](https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html)
-<br>
-[Unbricking/Flashing with a ch341a USB programmer | Chrultrabook Docs](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html)
-<br>
-[Verified Boot](https://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot/)
-<br>
-[Firmware Boot and Recovery](https://www.chromium.org/chromium-os/chromiumos-design-docs/firmware-boot-and-recovery/)
-<br>
-[Verified Boot Data Structures](https://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot-data-structures/)
-<br>
-[CrOS EC (Embedded Controller) - Google Security Chip (GSC) Case Closed Debugging (CCD)](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md)
-<br>
-[hdctools: Chrome OS Hardware Debug & Control Tools - Closed Case Debug (CCD)](https://chromium.googlesource.com/chromiumos/third_party/hdctools/+/HEAD/docs/ccd.md)
-<br>
-[CrOS EC (Embedded Controller) - Google Security Chip (GSC) Case Closed Debugging (CCD)](https://chromium.googlesource.com/chromiumos/platform/ec/+/fe6ca90e/docs/case_closed_debugging_cr50.md)
-<br>
-[Read-only firmware unlock on 2023+ devices](https://www.chromium.org/chromium-os/developer-library/guides/device/ro-firmware-unlock/)
-<br>
-[Firmware Write Protection on ChromeOS Devices | MrChromebox.tech](https://docs.mrchromebox.tech/docs/firmware/wp/)
-<br>
-[Firmware Management Parameters](https://www.chromium.org/chromium-os/fwmp/)
-<br>
-[GBB flag-inator](https://binbashbanana.github.io/gbbflaginator/)
-<br>
-[CrOS EC (Embedded Controller) | Software Sync](https://chromium.googlesource.com/chromiumos/platform/ec/+/HEAD/README.md#Preventing-the-RW-EC-firmware-from-being-overwritten-by-Software-Sync-at-boot)
-<br>
-[Chromium OS Docs - Firmware Test Manual](https://chromium.googlesource.com/chromiumos/docs/+/master/firmware_test_manual.md)
+# Works Cited
+
+Appleflyer. *"A Simple Guide to Flash WSON-8/SOIC-8 Chromebook Chips."* appleflyer's blog, edited by Appleflyer,  
+14 Apr. 2024, [appleflyers-blog.vercel.app](https://appleflyers-blog.vercel.app/blog/gbbflagflash). Accessed 12 Dec. 2024.
+
+Banana, Bin Bash. *"GBB flag-inator."* Edited by Kkilobyte, Bin Bash Banana, revision 1cbafcb,  
+4 Sept. 2024, [GitHub](https://github.com/binbashbanana/gbbflaginator/). Accessed 2 Dec. 2024.
+
+*"Firmware Boot and Recovery."* *The Chromium Projects*, Google,  
+[Chromium Docs](https://www.chromium.org/chromium-os/chromiumos-design-docs/firmware-boot-and-recovery/). Accessed 26 Nov. 2024.
+
+*"Firmware Management Parameters."* *Firmware Management Parameters*, Google,  
+[Chromium Docs](https://www.chromium.org/chromium-os/fwmp/). Accessed 26 Nov. 2024.
+
+*"Futility GBB Documentation."* *Google Git*, version 1.0, Google,  
+[Source](https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/refs/heads/main/futility/docs/cmd_gbb_utility.md). Accessed 12 Dec. 2024.
+
+Hughes, Tom. *"Embedded Controller (EC)."* Edited by Keith Short et al., *CrOS EC (Embedded Controller)*,  
+revision 85d7598, Google, 10 Apr. 2024,  
+[Source](https://chromium.googlesource.com/chromiumos/platform/ec/+/HEAD/README.md). Accessed 8 Dec. 2024.
+
+MrChromebox. *"Disabling Firmware Write Protection."* *MrChromebox.tech*, edited by MrChromebox et al.,  
+revision 9a03f14, 8 Nov. 2024, [Docs](https://docs.mrchromebox.tech/docs/firmware/wp/disabling.html). Accessed 26 Nov. 2024.
+
+---. *"Firmware Write Protection on ChromeOS Devices."* *MrChromebox.tech*, revision e219c93,  
+5 July 2024, [Docs](https://docs.mrchromebox.tech/docs/firmware/wp/). Accessed 26 Nov. 2024.
+
+Olyb, et al. *"Breaking ChromeOS's Enrollment Security Model: A Postmortem."* *coolelectronic blog*,  
+[Blog](https://blog.coolelectronics.me/breaking-cros-6/). Accessed 26 Nov. 2024.
+
+*"Read-only firmware unlock on 2023+ devices."* *The Chromium Projects*, Google,  
+[Chromium Docs](https://www.chromium.org/chromium-os/developer-library/guides/device/ro-firmware-unlock/). Accessed 26 Nov. 2024.
+
+Rink, Jett. *"Google Security Chip (GSC) Case Closed Debugging (CCD)."* *Google Git*, version f5e2cf9, Google,  
+24 Apr. 2024,  
+[Source](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md). Accessed 26 Nov. 2024.
+
+TerAvest, Justin. *"Firmware Test Manual."* Edited by Mike Frysinger et al., *Chromium OS Docs*, revision 05bebd5, Google,  
+27 Jan. 2021,  
+[Source](https://chromium.googlesource.com/chromiumos/docs/+blame/master/firmware_test_manual.md). Accessed 12 Dec. 2024.
+
+*"Unbricking/Flashing with a ch341a USB programmer."* *Chrultrabook Docs*, 29 Jan. 2025,  
+[Source](https://docs.chrultrabook.com/docs/unbricking/unbrick-ch341a.html). Accessed 15 Apr. 2025.
+
+*"Verified Boot."* *The Chromium Projects*, Google,  
+[Chromium Docs](https://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot/). Accessed 26 Nov. 2024.
+
+*"Verified Boot Data Structures."* *The Chromium Projects*, Google,  
+[Chromium Docs](https://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot-data-structures/). Accessed 26 Nov. 2024.
