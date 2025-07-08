@@ -8,7 +8,7 @@
 > This exploit is for *non-factory keyrolled* Ti50 systems only, meaning that your Chromebook had its *shim keys changed in an update* and not during its assembly. 
 
 ## Hey There!
-Google will release changes in version 136 (scheduled for May 13, 2025) that will prevent the use of Pencil Sharpener. This writeup exists for purely educational purposes only. Do not damage or tamper with a system that does not belong to you.
+Google has released changes in version 136 (released on May 13, 2025) that will prevent the use of Pencil Sharpener. This writeup exists for purely educational purposes only. Do not damage or tamper with a system that does not belong to you.
 
 If you are an administrator, we recommend that you set `DeviceMinimumVersion` in the admin console to ensure that your Chromebooks get updated as soon as v136 is available. 
 
