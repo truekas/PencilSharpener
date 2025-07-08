@@ -1,14 +1,15 @@
 
 <img src="https://github.com/truekas/PencilSharpener/blob/main/src/Logo.png?raw=true" alt="Pencil Sharpener"/>
 
-> [!WARNING]  
+> [!CAUTION]  
 > DURING THE EXPLOIT, MAKE SURE THE CHROMEBOOK STAYS PLUGGED INTO A CHARGER AT ALL TIMES (EXCEPT WHILE BRIDGING THE WP PINS). OTHERWISE THE SYSTEM WILL BRICK
 
 > [!IMPORTANT]
 > This exploit is for *non-factory keyrolled* Ti50 systems only, meaning that your Chromebook had its *shim keys changed in an update* and not during its assembly. 
 
-## Hey There!
-Google will release changes in version 136 (scheduled for May 13, 2025) that will prevent the use of Pencil Sharpener. This writeup exists for purely educational purposes only. Do not damage or tamper with a system that does not belong to you.
+> [!NOTE]
+> **As of version 136, powerwashing will require you to redo the exploit.** \
+> **Due to this, switching channels to Canary, Dev, or Beta no longer works.**
 
 If you are an administrator, we recommend that you set `DeviceMinimumVersion` in the admin console to ensure that your Chromebooks get updated as soon as v136 is available. 
 
