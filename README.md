@@ -8,7 +8,7 @@
 > This exploit is for *non-factory keyrolled* Ti50 systems only, meaning that your Chromebook had its *shim keys changed in an update* and not during its assembly. 
 
 ## Hey There!
-Google has released changes in version 136 (as of May 13, 2025) that will change how you can use Pencil Sharpener. Now, powerwashing your device even after it has been unenrolled will require you to redo the exploit. As a result, switching to other release channels (beta, canary) is impossible. This write-up remains only for educational purposes. Please do not damage or tamper with a system that does not belong to you.
+Google has released changes in version 136 (as of May 13, 2025) that will change how you can use Pencil Sharpener. Now, powerwashing your device even after it has been unenrolled will require you to redo the exploit. As a result, switching to other release channels (beta, canary) is impossible. This write-up exists only for educational purposes. Please do not damage or tamper with a system that does not belong to you.
 
 ## Introduction 
 Pencil Sharpener is an exploit that allows users to unenroll *non-factory keyrolled* Ti50 Chromebooks through a modified version of the pencil method. This works because the Google Security Chip does not verify device hashes until the system completely loses power, allowing users to temporarily bypass validation checks and disable RO verification. 
