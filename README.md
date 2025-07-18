@@ -1,6 +1,4 @@
-
-<img src="https://github.com/truekas/PencilSharpener/blob/main/src/Logo.png?raw=true" alt="Pencil Sharpener"/>
-
+# Pencil Sharpener
 > [!CAUTION]  
 > DURING THE EXPLOIT, MAKE SURE THE CHROMEBOOK STAYS PLUGGED INTO A CHARGER AT ALL TIMES (EXCEPT WHILE BRIDGING THE WP PINS). OTHERWISE THE SYSTEM WILL BRICK
 
